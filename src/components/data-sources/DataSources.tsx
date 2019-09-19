@@ -28,10 +28,12 @@ interface State {
 
 class DataSources extends React.Component<Props, State> {
     private localItems: Item[];
+    private isInitialize: boolean;
 
     constructor(props: Props) {
         super(props);
         this.localItems = [];
+        this.isInitialize = false;
         this.state = {
             filterVal: '',
             filteredItems: [],
@@ -43,7 +45,7 @@ class DataSources extends React.Component<Props, State> {
     }
 
     componentDidUpdate(prevProps: Props, prevState: State) {
-        if (prevProps.items !== this.props.items) {
+        if (!this.isInitialize && this.props.items.length !== 0) {
             this.localItems = [...this.props.items].map(item => {
                 return {
                     ...item,
@@ -53,6 +55,7 @@ class DataSources extends React.Component<Props, State> {
             this.setState({
                 filteredItems: this.localItems,
             });
+            this.isInitialize = true;
         }
     }
 
