@@ -65,6 +65,7 @@ class DataSources extends React.Component<Props, State> {
                 <Input
                     className={styles.filter}
                     value={this.state.filterVal}
+                    placeholder={'Search Columns'}
                     onChange={this.handleFilterChange}/>
                 { this.props.isLoading ?
                     <LoadingIndicator/> : <Accordion
