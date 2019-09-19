@@ -1,0 +1,11 @@
+.dataSources {
+  flex: 0 0 256px;
+  flex-direction: column;
+  margin-right: 16px;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.filter {
+  margin-bottom: 16px;
+}

@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css';
+import Header from './widgets/header/Header';
+import DataSourcesContainer from './containers/data-sources/DataSourcesContainer';
+import SageBarContainer from './containers/sage-bar/SageBarContainer';
+import { Provider } from 'react-redux';
+import {store} from './app/store/store';
 
 const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Provider store={store}>
+            <div className={styles.app}>
+                <Header />
+                <div className={styles.content}>
+                    <DataSourcesContainer />
+                    <SageBarContainer />
+                </div>
+            </div>
+        </Provider>
+    );
 }
 
 export default App;

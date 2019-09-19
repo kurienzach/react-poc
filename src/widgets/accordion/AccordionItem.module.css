@@ -1,0 +1,22 @@
+.accordionItem {
+    margin-bottom: 8px;
+}
+
+.accordionTitle {
+    cursor: pointer;
+}
+
+.accordionTitle span {
+    margin-right: 8px;
+}
+
+.accordionSubList {
+    font-size: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 2px 0 0 22px;
+}
+
+.accordionSubList li {
+    cursor: pointer;
+}
